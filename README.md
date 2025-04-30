@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Pizza Menu - Projeto de Aprendizado React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi criado com o objetivo de aprimorar minhas habilidades em React e desenvolvimento web moderno. É um cardápio interativo de pizzas que demonstra várias técnicas e conceitos importantes do React.
 
-## Available Scripts
+## 🚀 Tecnologias e Conceitos Dominados
 
-In the project directory, you can run:
+### React
+- **Componentização**: Organização do código em componentes reutilizáveis
+- **Hooks**: Uso de useState, useEffect e outros hooks do React
+- **Props**: Passagem de dados entre componentes
+- **Estado**: Gerenciamento de estado local e global
+- **Renderização Condicional**: Exibição dinâmica de elementos baseada em condições
 
-### `npm start`
+### CSS
+- **CSS Modules**: Estilização modular e escopo local
+- **Responsividade**: Design adaptativo para diferentes tamanhos de tela
+- **Animações**: Transições e efeitos visuais suaves
+- **Flexbox e Grid**: Layout moderno e flexível
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### JavaScript Moderno
+- **ES6+**: Uso de arrow functions, destructuring, spread operator
+- **Manipulação de Arrays**: map, filter, reduce
+- **Promises e Async/Await**: Tratamento assíncrono de dados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Boas Práticas
+- **Clean Code**: Código limpo e bem organizado
+- **Componentização**: Separação de responsabilidades
+- **Performance**: Otimização de renderização e carregamento
+- **Acessibilidade**: Considerações para usuários com necessidades especiais
 
-### `npm test`
+## 🍕 Funcionalidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Visualização de cardápio de pizzas
+- Filtros por categoria
+- Detalhes de cada pizza
+- Interface responsiva
+- Animações suaves
 
-### `npm run build`
+## 📦 Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clone o repositório
+git clone [URL_DO_REPOSITÓRIO]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Instale as dependências
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Inicie o servidor de desenvolvimento
+npm start
+```
 
-### `npm run eject`
+## 🛠️ Estrutura do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+  ├── components/     # Componentes reutilizáveis
+  ├── pages/         # Páginas da aplicação
+  ├── styles/        # Estilos CSS
+  ├── utils/         # Funções utilitárias
+  └── App.js         # Componente principal
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Próximos Passos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [ ] Implementar carrinho de compras
+- [ ] Adicionar sistema de login
+- [ ] Integrar com API de pagamento
+- [ ] Implementar testes unitários
+- [ ] Adicionar mais animações e interações
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🤝 Contribuições
 
-## Learn More
+Este é um projeto de aprendizado, mas sugestões e feedback são sempre bem-vindos! Sinta-se à vontade para abrir issues ou pull requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Licença
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto está sob a licença MIT.
