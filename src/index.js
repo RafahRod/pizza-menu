@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const pizzaData = [
     {
@@ -48,15 +49,56 @@ const pizzaData = [
   
 
 function App() {
-    return <div>
+    return <div className='container'>
         <Header />
         <Menu />
         <Footer />
     </div>;
 }
 
+
+
+
 function Header() {
-    return <h1>Fast React Pizza Company</h1>;
+    const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
+    return <header className='header'>
+        <h1 style={style}>Fast React Pizza Company</h1>
+    </header>;
+}
+
+function Menu() {
+
+    const pizzas = pizzaData;
+    const numPizzas = pizzas.length;
+
+    return (
+        <main className="menu">
+            <h2>Our Menu</h2>
+
+            {numPizzas > 0 ? (
+                <div>
+                    {pizzaData.map((pizza) => (
+                        <Pizza pizzaObj={pizza} key={pizza.name} />
+                    ))}
+                </div>
+            ) : (
+                <p>We're still working on our menu. Please come back later.</p>
+            )}
+        </main>
+    );
+}
+
+function Pizza(props) {
+    return (
+        <div className="pizza">
+            <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+            <div>
+                <h3>{props.pizzaObj.name}</h3>
+                <p>{props.pizzaObj.ingredients}</p>
+                <span>{props.pizzaObj.price + 2}</span>
+            </div>
+        </div>
+    );
 }
 
 function Footer() {
@@ -66,30 +108,17 @@ function Footer() {
     const isOpen = hour >= openHour && hour <= closeHour;
 
     return (
-        <footer>{new Date().toLocaleTimeString()}. We're currently open.</footer>
+        <footer className="footer">
+            {isOpen && (
+                <div className="order">
+                    <p>We're currently open until {closeHour}:00. Come visit us or order online.</p>
+                    <button className="btn">Order</button>
+                </div>
+            )}
+        </footer>
     );
 }
 
-function Menu() {
-    return (
-        <div>
-            <h2>Our Menu</h2>
-            <Pizza />
-            <Pizza />
-            <Pizza />
-        </div>
-    );
-}
-
-function Pizza() {
-    return (
-        <div>
-            <img src="pizzas/margherita.jpg" alt="Margherita" />
-            <h2>Margherita</h2>
-            <p>Tomato and mozarella</p>
-        </div>
-    );
-}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
