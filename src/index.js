@@ -75,12 +75,16 @@ function Menu() {
         <main className="menu">
             <h2>Our Menu</h2>
 
+
             {numPizzas > 0 ? (
-                <div>
-                    {pizzaData.map((pizza) => (
+                <>
+                    <p>Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious.</p>
+                    <ul className="pizzas">
+                        {pizzaData.map((pizza) => (
                         <Pizza pizzaObj={pizza} key={pizza.name} />
                     ))}
-                </div>
+                </ul>
+                </>
             ) : (
                 <p>We're still working on our menu. Please come back later.</p>
             )}
@@ -88,35 +92,40 @@ function Menu() {
     );
 }
 
-function Pizza(props) {
+function Pizza({pizzaObj}) {
+
     return (
-        <div className="pizza">
-            <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+        <div className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
+            <img src={pizzaObj.photoName} alt={pizzaObj.name} />
             <div>
-                <h3>{props.pizzaObj.name}</h3>
-                <p>{props.pizzaObj.ingredients}</p>
-                <span>{props.pizzaObj.price + 2}</span>
+                <h3>{pizzaObj.name}</h3>
+                <p>{pizzaObj.ingredients}</p>
+                <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price + 2}</span>
             </div>
         </div>
     );
 }
 
+
 function Footer() {
     const hour = new Date().getHours();
-    const openHour = 12;
+    const openHour = 9;
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
+    if (hour >= openHour && hour <= closeHour) {
+
     return (
-        <footer className="footer">
-            {isOpen && (
-                <div className="order">
-                    <p>We're currently open until {closeHour}:00. Come visit us or order online.</p>
-                    <button className="btn">Order</button>
-                </div>
-            )}
+        <footer className="footer">{isOpen && 
+        <div className="order">
+            <p>We're currently open until {closeHour}:00. Come visit us or order online.</p>
+            <button className="btn">Order</button>
+        </div>
+        }
         </footer>
     );
+    
+    }
 }
 
 
@@ -124,5 +133,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <App />
-    </React.StrictMode>
+    </React.StrictMode>     
 );
+
